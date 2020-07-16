@@ -89,13 +89,20 @@ namespace COMP123_MidTermExam
         // CREATE the private _initialize method here -----------------------------
         private void m_initialize()
         {
+            this.m_elementList = new List<>;
+            this.m_numberList = new List<>;
+            this.m_random = new List<>;
 
         }
 
         // CREATE the private _build method here -----------------------------------
         private void _build()
         {
-
+            for(int i=1;i<SetSize;i++)
+            {
+                NumberList.Add(i);
+                Console.WriteLine(i);
+            }
         }
 
         // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -126,12 +133,26 @@ namespace COMP123_MidTermExam
         }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-       // public LottoGame([int ElementNumber = 6],[int SetSize = 49])
-           
+        // public LottoGame([int ElementNumber = 6],[int SetSize = 49])
+
         // CREATE the public PickElements method here ----------------------------
         public void PickElements()
         {
-
+            foreach (var ifelement_number in ElementList)
+            {
+                if (ifelement_number > 0)
+                {
+                    ElementList.Clear();
+                    NumberList.Clear();
+                    _build();
+                }
+            }
+            for (int i = 1; i <= 6; i++)
+            {
+                ElementList.Add(random.Next(1, 49));
+            }
+            ElementList.Sort();
         }
     }
+    
 }
