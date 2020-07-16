@@ -17,13 +17,44 @@ namespace COMP123_MidTermExam
      */
     public abstract class LottoGame
     {
+
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        
+
+
         // CREATE private fields here --------------------------------------------
+        private int m_elementNumber;
+        private List<int> m_elementList;
+        private List<int> m_numberList;
+        private Random m_random;
+        private int m_setSize;
 
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        
+
+
         // CREATE public properties here -----------------------------------------
+
+        public List<int> ElementList
+        {
+            get;
+        }
+        public int ElementNumber
+        {
+            get;
+            set;
+        }
+        public List<int> NumberList
+        {
+            get;
+        }
+        public Random random
+        {
+            get;
+        }
+        public int SetSize
+        {
+            get;
+            set;
+        }
 
         // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -47,7 +78,7 @@ namespace COMP123_MidTermExam
             this.SetSize = setSize;
 
             // call the _initialize method
-            this._initialize();
+            this.m_initialize();
 
             // call the _build method
             this._build();
@@ -56,8 +87,16 @@ namespace COMP123_MidTermExam
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the private _initialize method here -----------------------------
+        private void m_initialize()
+        {
+
+        }
 
         // CREATE the private _build method here -----------------------------------
+        private void _build()
+        {
+
+        }
 
         // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -87,7 +126,12 @@ namespace COMP123_MidTermExam
         }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+       // public LottoGame([int ElementNumber = 6],[int SetSize = 49])
+           
         // CREATE the public PickElements method here ----------------------------
+        public void PickElements()
+        {
+
+        }
     }
 }
