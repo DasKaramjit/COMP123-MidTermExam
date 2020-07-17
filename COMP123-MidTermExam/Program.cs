@@ -8,9 +8,14 @@ namespace COMP123_MidTermExam
 {
     /*  Das Karamjit
      *  301108505
-     *  Date Last Modified :
-     *  Program Description :
-     *  Revision History :
+     *  Date Last Modified : 17-07-2020
+     *  Program Description : This is the program which that randomly picks lottery numbers
+     *  from a list of two different games. Abstract class(LottoGame) is created here with 
+     *  two subclasses(Lotto649 and LottoMax) along with one interface IGeneratelottoNumbers.
+     * The LottoMenu method will display options to choose one of two different lotto games
+     * (i.e. 1. Lotto 6/49, 2. Lotto MAX) as well as an exit option.
+     *  Revision History : After whole revision of all program.cs files, errors and syntax were 
+     *  corrected and it function properly.
      */
 
     /**
