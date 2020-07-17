@@ -22,11 +22,11 @@ namespace COMP123_MidTermExam
 
 
         // CREATE private fields here --------------------------------------------
-        private int m_elementNumber;
-        private List<int> m_elementList;
-        private List<int> m_numberList;
-        private Random m_random;
-        private int m_setSize;
+        private int _elementNumber;
+        private List<int> _elementList;
+        private List<int> _numberList;
+        private Random _random;
+        private int _setSize;
 
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -72,26 +72,26 @@ namespace COMP123_MidTermExam
         public LottoGame(int elementNumber = 6, int setSize = 49)
         {
             // assign elementNumber local variable to the ElementNumber property
-            this.ElementNumber = elementNumber;
+           ElementNumber = elementNumber;
 
             // assign setSize local variable tot he SetSize property
-            this.SetSize = setSize;
+            SetSize = setSize;
 
             // call the _initialize method
-            this.m_initialize();
+            _initialize();
 
             // call the _build method
-            this._build();
+            _build();
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the private _initialize method here -----------------------------
-        private void m_initialize()
+        private void _initialize()
         {
-            this.m_elementList = new List<>;
-            this.m_numberList = new List<>;
-            this.m_random = new List<>;
+            this._elementList = new List<int>();
+            this._numberList = new List<int>();
+            this._random = new Random();
 
         }
 
@@ -138,9 +138,9 @@ namespace COMP123_MidTermExam
         // CREATE the public PickElements method here ----------------------------
         public void PickElements()
         {
-            foreach (var ifelement_number in ElementList)
+            foreach (var elements in ElementList)
             {
-                if (ifelement_number > 0)
+                if (elements > 0)
                 {
                     ElementList.Clear();
                     NumberList.Clear();
@@ -149,7 +149,9 @@ namespace COMP123_MidTermExam
             }
             for (int i = 1; i <= 6; i++)
             {
-                ElementList.Add(random.Next(1, 49));
+                int r = random.Next();
+                Console.WriteLine(r);
+               // ElementList.Add(random.Next(1, 49));
             }
             ElementList.Sort();
         }
