@@ -123,10 +123,10 @@ namespace COMP123_MidTermExam
         // CREATE the private _build method here -----------------------------------
         private void _build()
         {
-            for(int i=1;i<SetSize;i++)
+            for (int i = 1; i < SetSize; i++)
             {
-                NumberList.Add(i);
-                Console.WriteLine(i);
+                NumberList.Add(i+1);
+          
             }
         }
 
@@ -172,7 +172,7 @@ namespace COMP123_MidTermExam
             
             for (int i = 1; i <= ElementNumber; i++)
             {
-                int r = random.Next(NumberList.Count);
+                int r = _random.Next(NumberList.Count);
            
                 ElementList.Add(NumberList[r]);
 
