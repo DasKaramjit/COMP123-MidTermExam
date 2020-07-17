@@ -34,6 +34,7 @@ namespace COMP123_MidTermExam
             for (int j = 1; j < 7; j++)
             {
                 PickElements();
+                Console.WriteLine($"Your tickets are :{j}");
                 Console.WriteLine(ToString());
             }
         }

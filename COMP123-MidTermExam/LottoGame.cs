@@ -35,25 +35,50 @@ namespace COMP123_MidTermExam
 
         public List<int> ElementList
         {
-            get;
+            get
+            {
+                return _elementList;
+
+            }
         }
         public int ElementNumber
         {
-            get;
-            set;
+            get
+            {
+                return _elementNumber;
+            }
+            set
+            {
+                _elementNumber = value;
+            }
+                
         }
         public List<int> NumberList
         {
-            get;
+            get
+            {
+                return _numberList;
+            }
+
         }
         public Random random
         {
-            get;
+            get
+            {
+                return _random;
+            }
         }
         public int SetSize
         {
-            get;
-            set;
+            get
+            {
+                return _setSize;
+            }
+            set
+            {
+                _setSize = value;
+            }
+
         }
 
         // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -133,25 +158,25 @@ namespace COMP123_MidTermExam
         }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        // public LottoGame([int ElementNumber = 6],[int SetSize = 49])
+         
 
         // CREATE the public PickElements method here ----------------------------
         public void PickElements()
         {
-            foreach (var elements in ElementList)
-            {
-                if (elements > 0)
+                if (ElementList.Count > 0)
                 {
                     ElementList.Clear();
                     NumberList.Clear();
                     _build();
                 }
-            }
-            for (int i = 1; i <= 6; i++)
+            
+            for (int i = 1; i <= ElementNumber; i++)
             {
-                int r = random.Next();
-                Console.WriteLine(r);
-               // ElementList.Add(random.Next(1, 49));
+                int r = random.Next(NumberList.Count);
+           
+                ElementList.Add(NumberList[r]);
+
+                NumberList.RemoveAt(r);
             }
             ElementList.Sort();
         }
